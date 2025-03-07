@@ -1,7 +1,6 @@
-package edu.course.littlelemon
+package edu.course.littlelemon.view
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -32,9 +31,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-
-val PrimaryColor1 = Color(0xFF495E57)
-val PrimaryColor2 = Color(0xFFF4CE14)
+import edu.course.littlelemon.navigation.HomeDestination
+import edu.course.littlelemon.R
+import edu.course.littlelemon.ui.theme.*
 
 @Composable
 fun Onboarding(navController: NavController) {
