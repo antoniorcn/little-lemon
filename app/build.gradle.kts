@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     kotlin("plugin.serialization") version "2.0.21"
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -52,8 +53,22 @@ dependencies {
     // Adicionado para navegação
     implementation(libs.androidx.navigation.compose)
 
+    // Implementação do Ktor
+    implementation (libs.ktor.ktor.client.android)
+    implementation (libs.ktor.client.content.negotiation)
+    implementation (libs.ktor.serialization.kotlinx.json)
+    implementation (libs.ktor.client.logging)
+
     // Permite a serialização
     implementation(libs.kotlinx.serialization.json)
+
+    // Implementação do Room
+    implementation (libs.androidx.room.runtime)
+    implementation( libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
+    // Glide
+    implementation(libs.glide.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
